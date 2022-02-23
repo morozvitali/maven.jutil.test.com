@@ -5,19 +5,19 @@ public class MyMathTest {
     static public MyMath2 mm;
 
     @BeforeClass
-    public static void beforeTest () {
-    mm = new MyMath2();
+    public static void beforeTest() {
+        mm = new MyMath2();
     }
 
     @After
-    public void afterTest () {
+    public void afterTest() {
         System.out.println("Test ok");
     }
 
 
     @Test
-    public void resultShouldBeZero () {
-        Assert.assertEquals(0, mm.mySum(0,0), DELTA);
+    public void resultShouldBeZero() {
+        Assert.assertEquals(0, mm.mySum(0, 0), DELTA);
     }
 
     @Test
@@ -30,18 +30,18 @@ public class MyMathTest {
         Assert.assertEquals(0, mm.getY(), DELTA);
     }
 
-    @Test (timeout = 1000)
-    public void resultShouldBefasterTousenSec () {
+    @Test(timeout = 1000)
+    public void resultShouldBefasterTousenSec() {
         mm.mySum(3, 4);
     }
 
-    @Test (expected = ArithmeticException.class)
-    public void resultShouldBeDividedByZero () {
+    @Test(expected = ArithmeticException.class)
+    public void resultShouldBeDividedByZero() {
         mm.myDivide(0, 0);
     }
 
-    @Test (timeout = 1600)
-    public void resultShouldBeMore1500Sec () throws InterruptedException {
+    @Test(timeout = 1600)
+    public void resultShouldBeMore1500Sec() throws InterruptedException {
         mm.sleepMethod();
     }
 
